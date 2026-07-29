@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: aero-vaani-inspection
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn run:app
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SIMULATION_MODE
+        value: "True"
+      - key: FLASK_SECRET_KEY
+        generateValue: true
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "587"
