@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Aero Vaani | Drone Inspection Dashboard{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🛰️ Aero&nbsp;Vaani <span>Smart Drone Infrastructure Inspection</span></div>
+    {% if simulation_mode is defined and simulation_mode %}
+    <div class="sim-badge">SIMULATION MODE</div>
+    {% endif %}
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer>
+    Built by Team Aero Vaani &mdash; Winner, Hacksavvy-26 (MGIT National Hackathon)
+  </footer>
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
