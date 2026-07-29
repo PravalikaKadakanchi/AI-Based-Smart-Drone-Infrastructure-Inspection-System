@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="controls">
+  <button id="runInspectionBtn">Run Inspection</button>
+  <span id="statusText">Idle</span>
+</section>
+
+<section class="grid">
+  <div class="card image-card">
+    <h3>Live / Captured Image</h3>
+    <img id="capturedImage" src="" alt="Inspection capture will appear here" />
+  </div>
+
+  <div class="card">
+    <h3>Damage Classification</h3>
+    <div id="severityBadge" class="severity-badge">—</div>
+    <p id="recommendationText">No inspection run yet.</p>
+  </div>
+
+  <div class="card">
+    <h3>GPS &amp; Telemetry</h3>
+    <table id="telemetryTable">
+      <tr><td>Latitude</td><td id="tLat">—</td></tr>
+      <tr><td>Longitude</td><td id="tLon">—</td></tr>
+      <tr><td>Altitude</td><td id="tAlt">—</td></tr>
+      <tr><td>Battery</td><td id="tBattery">—</td></tr>
+      <tr><td>Flight Mode</td><td id="tMode">—</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Crack Detection</h3>
+    <table>
+      <tr><td>Cracks Detected</td><td id="cDetected">—</td></tr>
+      <tr><td>Crack Count</td><td id="cCount">—</td></tr>
+      <tr><td>Surface Coverage</td><td id="cCoverage">—</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Report</h3>
+    <p id="reportStatus">No report generated yet.</p>
+    <a id="reportLink" href="#" style="display:none;">Download PDF Report</a>
+  </div>
+</section>
+{% endblock %}
