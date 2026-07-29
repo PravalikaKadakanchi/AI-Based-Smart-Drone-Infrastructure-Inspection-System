@@ -1,0 +1,13 @@
+Flask==3.0.3
+opencv-python-headless==4.10.0.84
+numpy==1.26.4
+reportlab==4.2.2
+
+# Hardware / drone integration (install on Raspberry Pi / with hardware attached).
+# Omit these for laptop/simulation-mode development — the app auto-detects
+# their absence and falls back to simulated camera + telemetry data.
+picamera2==0.3.20; platform_machine == "aarch64" or platform_machine == "armv7l"
+pymavlink==2.4.41
+
+# Dev / testing
+pytest==8.2.2
